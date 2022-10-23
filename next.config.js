@@ -1,6 +1,3 @@
-const TU_SPACE_ID = 'l5jy9ww4zd0d'
-const TU_ACCESS_TOKEN = 'owyFA4P1KdP7olr9eHcuVSLI3Nq7kz2ZhAa7o-iI4mA'
-
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
@@ -10,8 +7,8 @@ const config = {
     webpack5: true,
   },
   env: {
-    NEXT_PUBLIC_SPACE_ID: TU_SPACE_ID,
-    NEXT_PUBLIC_ACCESS_TOKEN: TU_ACCESS_TOKEN,
+    NEXT_PUBLIC_SPACE_ID: process.env.TU_SPACE_ID,
+    NEXT_PUBLIC_ACCESS_TOKEN: process.env.TU_ACCESS_TOKEN,
   },
 }
 
