@@ -5,6 +5,8 @@ import { Button } from '@ui/Button'
 
 import { Excerpt } from '@components/Excerpt'
 
+import { ImageContentful } from '@components/Image'
+
 type PlantCollectionProps = {
   plants: Plant[]
   variant?: 'square' | 'vertical'
@@ -54,7 +56,12 @@ export function PlantEntrySquare({ image, plantName, slug }: Plant) {
     <Link href={`/entry/${slug}`}>
       <a title={`Go to ${plantName}`}>
         <div className="opacity-95 hover:opacity-100">
-          <img src={image.url} width={460} />
+          <ImageContentful
+            src={image.url}
+            layout="intrinsic"
+            width={460}
+            aspectRatio="4:3"
+          />
           <div className="p-4">
             <Typography variant="h4" className="break-words">
               {plantName}
